@@ -8,12 +8,12 @@ A terminal-based disk space analyzer built in Rust. Scan any drive or folder, vi
 
 ## Features
 
-- **Instant results** — top-level folders stream in as they finish scanning; no waiting for a full scan
-- **Interactive tree view** — expand/collapse directories, navigate with keyboard
-- **Visual size bars** — proportional bar next to each item shows relative size at a glance
-- **Drive usage gauge** — total/used/free space shown at the top
-- **Multi-select deletion** — select multiple files/folders, see total space freed before confirming
-- **Permission-aware** — skipped paths (access denied) are reported, not crashed on
+- **Instant results** - top-level folders stream in as they finish scanning; no waiting for a full scan
+- **Interactive tree view** - expand/collapse directories, navigate with keyboard
+- **Visual size bars** - proportional bar next to each item shows relative size at a glance
+- **Drive usage gauge** - total/used/free space shown at the top
+- **Multi-select deletion** - select multiple files/folders, see total space freed before confirming
+- **Permission-aware** - skipped paths (access denied) are reported, not crashed on
 
 ## Requirements
 
@@ -74,26 +74,26 @@ cargo run -- "C:\Users\YourName\Downloads"
 ### Deletion flow
 
 1. Select one or more items with `Space` (or leave nothing selected to target the cursor item)
-2. Press `D` — a confirmation dialog shows all targets and the **total space that will be freed**
+2. Press `D` - a confirmation dialog shows all targets and the **total space that will be freed**
 3. Use `Tab` / `←` / `→` to move between **Yes, Delete** and **Cancel**
-4. Press `Enter` to confirm — items are deleted and a fresh scan starts automatically
+4. Press `Enter` to confirm - items are deleted and a fresh scan starts automatically
 
 ## Project Structure
 
 ```
 src/
-  main.rs           — terminal setup/teardown, event loop, key handling
-  app.rs            — application state, navigation, selection, delete logic
-  scanner.rs        — parallel background scan with streaming results
-  fs_tree.rs        — FsNode tree type, FlatItem projection, size sorting
+  main.rs             - terminal setup/teardown, event loop, key handling
+  app.rs              - application state, navigation, selection, delete logic
+  scanner.rs          - parallel background scan with streaming results
+  fs_tree.rs          - FsNode tree type, FlatItem projection, size sorting
   ui/
-    mod.rs          — layout and render dispatcher
-    drive_bar.rs    — drive usage gauge widget
-    tree_view.rs    — scrollable tree list with size bars
-    status_bar.rs   — key hints and scan progress
-    confirm_dialog.rs — deletion confirmation modal
+    mod.rs            - layout and render dispatcher
+    drive_bar.rs      - drive usage gauge widget
+    tree_view.rs      - scrollable tree list with size bars
+    status_bar.rs     - key hints and scan progress
+    confirm_dialog.rs - deletion confirmation modal
 ```
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
